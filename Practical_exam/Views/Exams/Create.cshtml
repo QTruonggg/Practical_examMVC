@@ -1,7 +1,7 @@
 ﻿@model Practical_exam.Entities.Exam
 @{
-	ViewData["Title"] = "Create";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
@@ -26,6 +26,18 @@
                 <label asp-for="ExamDuration" class="control-label"></label>
                 <input asp-for="ExamDuration" class="form-control" />
                 <span asp-validation-for="ExamDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="classesId" class="control-label"></label>
+                <select asp-for="classesId" class="form-control" asp-items="ViewBag.classesId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="facultysId" class="control-label"></label>
+                <select asp-for="facultysId" class="form-control" asp-items="ViewBag.facultysId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="subjectsId" class="control-label"></label>
+                <select asp-for="subjectsId" class="form-control" asp-items="ViewBag.subjectsId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

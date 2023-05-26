@@ -1,9 +1,9 @@
-﻿@page
-@model Practical_exam.Entities.Exam
+﻿@model Practical_exam.Entities.Exam
 @{
-	ViewData["Title"] = "Index";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h1>Index</h1>
 
 <p>
@@ -21,6 +21,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.ExamDuration)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.classes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subjects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.facultys)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -36,6 +45,15 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ExamDuration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classes.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subjects.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.facultys.Name)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ExamId">Edit</a> |
