@@ -1,6 +1,29 @@
-﻿namespace Practical_exam.Migrations
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Practical_exam.Migrations
 {
-    public class _20230526131836_fo
+    /// <inheritdoc />
+    public partial class fo : Migration
     {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<string>(
+                name: "status",
+                table: "exams",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "status",
+                table: "exams");
+        }
     }
 }
